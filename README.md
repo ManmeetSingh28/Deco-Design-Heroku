@@ -1,15 +1,8 @@
-# Deco-Design-
+# Deco-Design-Heroku 
 This is an Online Internal Design Website which can be used by people to get ideas about new design and can consult an architect by contacting us threw our website 
 
-Requirments-
-  Make sure u install django and python in your system
+These Files are for the heroku deployment.
 
+So can not run on the PC 
 
-STEP 1-
-  Download the zip file using 
- STEP 2-
-  unzip the file in a folder
- STEP 3-
-  open that folder in your IDE
- STEP 4-
-  open terminal and write (python manage.py runserver)
+Website Link will be Provided Soon ----
