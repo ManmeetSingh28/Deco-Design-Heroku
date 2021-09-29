@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-e8mm1i%#o2)-s_3-nwxv*j!6au0sb%=p&o-$s_6o+q^g9p_gp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','decodesign.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,13 +41,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -118,22 +118,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = 'E:\Work\mysite\static'
 
-STATIC_ROOT = [
-    os.path.join(BASE_DIR, "static/images"),
-    os.path.join(BASE_DIR, "static/css"),
-    os.path.join(BASE_DIR, "static/images/Residential"),
-    os.path.join(BASE_DIR, "static/images/Office"),
-    os.path.join(BASE_DIR, "static/images/Commercial"),
-    os.path.join(BASE_DIR, "static/js"),
-    os.path.join(BASE_DIR, "static/images/Examples"),
-]
+   
 
 STATIC_URL = '/static/'
 
-
-STATICFILES_DIRS = [
+STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/images"),
     os.path.join(BASE_DIR, "static/css"),
     os.path.join(BASE_DIR, "static/images/Residential"),
@@ -141,7 +131,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static/images/Commercial"),
     os.path.join(BASE_DIR, "static/js"),
     os.path.join(BASE_DIR, "static/images/Examples"),
-]
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
